@@ -1,5 +1,4 @@
 /*Jasmine Ou
-Ms.Dyke
 December 26, 2014
 This is a connect four game. The user sees a brief animation of a winning connect four game then proceeds to the main menu which has 4 options: instructions,play,highscores and exit. The instructions option leads the user to an instructions page, the high scores shows the user the top 10 scores of winners if there are any and the exit goes to the goodbye screen and closes the window after the user presses any key to continue. If the user selects the play option, they proceed to the game board screen and are prompted to enter a column number in which they want to insert a piece in to with an errortrap to limit their input from 0-7. The side bar shows whose turn it is, how many moves were made and that the user could return to the main menu by selecting 0 when prompted to enter a column number. When there is a winner, a window pops up indicating the winner and proceeds to the results page that tells the user who wins and in how many moves. Then they are prompted to enter their name in less than 13 charactars. If it is a tie, the the user gets a message saying so and does not get prompted to enter their name. The user can choose to play again for as many times as they wish and the game automatically resets. The user can delete the high scores file to clear data as well.*/
 
@@ -13,33 +12,33 @@ public class ConnectFour extends Thread
 
     /*                                          Global Variable Declaration Dictionary
     +----------------------------------------------------------------------------------------------------------------------------------+
-    ¦Name         ¦Type            ¦Description/Purpose of variable                                                                    ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦c            ¦reference       ¦It points to the Console class in RAM to use the methods within it.                                ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦ROW          ¦static final int¦The value is 6, the number of rows in the connect four game board to be used in a 2D array         ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦COL          ¦static final int¦The value is 7, the number of columns in the connect four game board to be used in a 2D array      ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦choice       ¦String          ¦It stores the user input of the option selected in the main menu.                                  ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦playerNum    ¦int             ¦Stores the player number for alternating turns and displaying who wins in the winner page.         ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦moveNum      ¦int             ¦Stores the number of moves both players make and stores it to the high scores file if someone wins.¦
+    Â¦Name         Â¦Type            Â¦Description/Purpose of variable                                                                    Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦c            Â¦reference       Â¦It points to the Console class in RAM to use the methods within it.                                Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦ROW          Â¦static final intÂ¦The value is 6, the number of rows in the connect four game board to be used in a 2D array         Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦COL          Â¦static final intÂ¦The value is 7, the number of columns in the connect four game board to be used in a 2D array      Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦choice       Â¦String          Â¦It stores the user input of the option selected in the main menu.                                  Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦playerNum    Â¦int             Â¦Stores the player number for alternating turns and displaying who wins in the winner page.         Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦moveNum      Â¦int             Â¦Stores the number of moves both players make and stores it to the high scores file if someone wins.Â¦
     +-------------+----------------+---------------------------------------------------------------------------------------------------+
-    ¦input        ¦BufferedReader  ¦Variable that is used to read files for file IO
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦greenTea     ¦Color           ¦Creates a green color for the background.                                                          ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦chocolate    ¦Color           ¦Creates a brown color for the background.                                                          ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦vanilla      ¦Color           ¦Creates a light yellow color for the background.                                                   ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦redBean      ¦Color           ¦Creates a purple color for the background.                                                         ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦strawberry   ¦Color           ¦Creates a pink color for the background.                                                           ¦
-    +-------------+----------------+---------------------------------------------------------------------------------------------------¦
-    ¦darkChocolate¦Color           ¦Creates a dark brown color for the fancy text.                                                     ¦
+    Â¦input        Â¦BufferedReader  Â¦Variable that is used to read files for file IO
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦greenTea     Â¦Color           Â¦Creates a green color for the background.                                                          Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦chocolate    Â¦Color           Â¦Creates a brown color for the background.                                                          Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦vanilla      Â¦Color           Â¦Creates a light yellow color for the background.                                                   Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦redBean      Â¦Color           Â¦Creates a purple color for the background.                                                         Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦strawberry   Â¦Color           Â¦Creates a pink color for the background.                                                           Â¦
+    +-------------+----------------+---------------------------------------------------------------------------------------------------Â¦
+    Â¦darkChocolateÂ¦Color           Â¦Creates a dark brown color for the fancy text.                                                     Â¦
     +----------------------------------------------------------------------------------------------------------------------------------+*/
     Console c;
     static final int ROW = 6;
@@ -57,11 +56,11 @@ public class ConnectFour extends Thread
 
     /* Local Variable Declaration Dictionary
     +-------------------------------------------+
-    ¦Name ¦Type ¦Description/Purpose of variable¦
-    +-----+-----+-------------------------------¦
-    ¦brown¦Color¦Creates the color brown        ¦
+    Â¦Name Â¦Type Â¦Description/Purpose of variableÂ¦
+    +-----+-----+-------------------------------Â¦
+    Â¦brownÂ¦ColorÂ¦Creates the color brown        Â¦
     +-----+-----+-------------------------------+
-    ¦x    ¦int  ¦Loop variable for animation that starts at 0, increments by 1 and runs until 300 but stops when 15 for the flashing pieces afterwards. ¦
+    Â¦x    Â¦int  Â¦Loop variable for animation that starts at 0, increments by 1 and runs until 300 but stops when 15 for the flashing pieces afterwards. Â¦
     +-------------------------------------------+
     A splash screen that shows up momentarily when the user executes the program that displays an animation of a winning connect four game board. The four loop animates both pieces to fall. */
     public void splashScreen ()
@@ -154,21 +153,21 @@ public class ConnectFour extends Thread
 
     /* Local Variable Declaration Dictionary
     +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-    ¦Name         ¦Type    ¦Description/Purpose of variable                                                                                                                                                  ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦spot         ¦2D array¦The 2D array that stores the most recent location of a user's piece placement                                                                                                    ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦row          ¦int     ¦Stores the row number that the most recent user's piece is in.                                                                                                                   ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦column       ¦int     ¦Stores the column number that the most recent user's piece is in.                                                                                                                ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦playerNum    ¦int     ¦Stores either 0,1 or 2 to be assigned to the 2d array spot to indicate which player's piece, if any, is in a specific spot.                                                      ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦oppositeCheck¦boolean ¦The variable is false while the pieces are checked in one direction but if no match is found, the checker switches to the opposite direction and becomes true to allow the check.¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦counter      ¦int     ¦The variable counts the number of times a matching piece is found for the same player in the initial direction check.                                                            ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦otherCounter ¦int     ¦The variable counts the number of times a matching piece is found for the same player in the opposite direction check.                                                           ¦
+    Â¦Name         Â¦Type    Â¦Description/Purpose of variable                                                                                                                                                  Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦spot         Â¦2D arrayÂ¦The 2D array that stores the most recent location of a user's piece placement                                                                                                    Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦row          Â¦int     Â¦Stores the row number that the most recent user's piece is in.                                                                                                                   Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦column       Â¦int     Â¦Stores the column number that the most recent user's piece is in.                                                                                                                Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦playerNum    Â¦int     Â¦Stores either 0,1 or 2 to be assigned to the 2d array spot to indicate which player's piece, if any, is in a specific spot.                                                      Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦oppositeCheckÂ¦boolean Â¦The variable is false while the pieces are checked in one direction but if no match is found, the checker switches to the opposite direction and becomes true to allow the check.Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦counter      Â¦int     Â¦The variable counts the number of times a matching piece is found for the same player in the initial direction check.                                                            Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦otherCounter Â¦int     Â¦The variable counts the number of times a matching piece is found for the same player in the opposite direction check.                                                           Â¦
     +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     The black box return method that returns true if a connect four match is found, or else it returns false. The first while loop checks to the right and then the left of the current piece's location. Then there is an if statement that makes sure the check does not check out of bounds of the array index. The next if statement checks that the piece to the right is the same player's piece and that opposite check is false. If the if statement is true and counter adds one. Then it continues checking back up to the label horizontalCheck until either on of the if statements become false.If either of the first two if statements are false, opposite check becomes true and now pieces to the left of the current piece's location is checked followed by an if statement to prevent out of bounds checking and an if statement to check if the piece to left is the same player's piece. If both if statement's are true, then the otherCounter adds one. Then it continues checking back up to the label horizontalCheck until either one of the if statements become false. Then there is an if statement that checks if both counters add up to 3 or if either on is equal to 3 to return true for a connect four since the first piece is already counted for. Then there is a break after the variables are reset to false or 0. The next segements are code are the same but they check up then down, diagonal right up then diagonal left down, diagonal left up then diagonal right down. If all do not return true, then it returns false. */
     private boolean winCheck (int[] [] spot, int row, int column, int playerNum)
@@ -386,13 +385,13 @@ public class ConnectFour extends Thread
 
     /*Local Variable Declaration Dictionary
     +-------------------------------------------------------------------------------------+
-    ¦Name¦Type  ¦Description/Purpose of Variable                                          ¦
-    +----+------+-------------------------------------------------------------------------¦
-    ¦z   ¦int   ¦Stores the number of entries in the high score text file.                ¦
-    +----+------+-------------------------------------------------------------------------¦
-    ¦line¦String¦Stores the first line when read to check if it is null to be stored in z.¦
+    Â¦NameÂ¦Type  Â¦Description/Purpose of Variable                                          Â¦
+    +----+------+-------------------------------------------------------------------------Â¦
+    Â¦z   Â¦int   Â¦Stores the number of entries in the high score text file.                Â¦
+    +----+------+-------------------------------------------------------------------------Â¦
+    Â¦lineÂ¦StringÂ¦Stores the first line when read to check if it is null to be stored in z.Â¦
     +----+------+-------------------------------------------------------------------------+
-    ¦x   ¦int   ¦ Loop variable for constructing the chart that starts at 0, increments by one and stops when less than z.¦
+    Â¦x   Â¦int   Â¦ Loop variable for constructing the chart that starts at 0, increments by one and stops when less than z.Â¦
     +-------------------------------------------------------------------------------------+
     Displays the title and the high scores in a chart format with the name, score and position where the lower the score, the better. The user can delete the file and this page will have an empty chart. Pause program  pauses the program until any key is pressed. The for loop outputs the data directly from the input file in chart format.*/
     public void highScores ()
@@ -446,21 +445,21 @@ public class ConnectFour extends Thread
 
     /*Local Variable Declaration Dictionary
     +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-    ¦Name         ¦Type    ¦Description/Purpose of variable                                                                                                                                                  ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦spot         ¦2D array¦The 2D array that stores the most recent location of a user's piece placement                                                                                                    ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦row          ¦int     ¦Stores the row number that the most recent user's piece is in.                                                                                                                   ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦column       ¦int     ¦Stores the column number that the most recent user's piece is in.                                                                                                                ¦
-    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦r            ¦int     ¦Loop variable starting at 0, increments by 1, runs while less than 6 to check if the row is filled already.                                                                                                                         ¦
-    +-------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦temp         ¦String  ¦Stores the value of x plus one because drawString does not output integer values.                                                                                                                                                   ¦
-    +-------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦x            ¦int     ¦Loop variable starts from 0 and runs until more than 400 and increments by 70 to output the white circles of game board. The next loop increments by 1, starts at 0 and runs while less than 0 to output the rainbow column numbers.¦
-    +-------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------¦
-    ¦rainbow      ¦Color array¦Stores 7 colors of the rainbow.                                                                                                                                                                                                     ¦
+    Â¦Name         Â¦Type    Â¦Description/Purpose of variable                                                                                                                                                  Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦spot         Â¦2D arrayÂ¦The 2D array that stores the most recent location of a user's piece placement                                                                                                    Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦row          Â¦int     Â¦Stores the row number that the most recent user's piece is in.                                                                                                                   Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦column       Â¦int     Â¦Stores the column number that the most recent user's piece is in.                                                                                                                Â¦
+    +-------------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦r            Â¦int     Â¦Loop variable starting at 0, increments by 1, runs while less than 6 to check if the row is filled already.                                                                                                                         Â¦
+    +-------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦temp         Â¦String  Â¦Stores the value of x plus one because drawString does not output integer values.                                                                                                                                                   Â¦
+    +-------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦x            Â¦int     Â¦Loop variable starts from 0 and runs until more than 400 and increments by 70 to output the white circles of game board. The next loop increments by 1, starts at 0 and runs while less than 0 to output the rainbow column numbers.Â¦
+    +-------------+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Â¦
+    Â¦rainbow      Â¦Color arrayÂ¦Stores 7 colors of the rainbow.                                                                                                                                                                                                     Â¦
     +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
     Displays the title, gameboard and prompts the user to enter a column number from 1-7. There is an errortrap for input 0-7. They input 0 to return to the main menu. The sidebar displays the number of moves made, the player number's turn and extra info. The first for loop outputs all the white circles and the second for loop outputs the rainbow column numbers. The while loop runs while nobody wins, or else there is a break. The while loop that errortraps the column number input to 0-7 and erases bad input as well as if they press enter right away, it puts the cursor back and erases bad input to let them enter a correct value. */
